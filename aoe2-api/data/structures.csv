@@ -1,0 +1,60 @@
+name,age,cost,build_time,hit_points
+Barracks,Dark,{"Wood": 175},50,1200
+Dock,Dark,{"Wood": 150},35,1800
+Farm,Dark,{"Wood": 60},15,480
+Fish Trap,Dark,{"Wood": 100},53,50
+House,Dark,{"Wood": 30},25,900
+Lumber Camp,Dark,{"Wood": 100},35,1000
+Mill,Dark,{"Wood": 100},35,1000
+Mining Camp,Dark,{"Wood": 100},35,1000
+Town Center,Dark,{"Wood": 275;"Stone": 100},150,2400
+Archery Range,Feudal,{"Wood": 175},50,1500
+Barracks,Feudal,{"Wood": 175},50,1500
+Blacksmith,Feudal,{"Wood": 150},40,2100
+Dock,Feudal,{"Wood": 150},35,1800
+House,Feudal,{"Wood": 30},25,900
+Lumber Camp,Feudal,{"Wood": 100},35,1000
+Market,Feudal,{"Wood": 175},60,2100
+Mill,Feudal,{"Wood": 100},35,1000
+Mining Camp,Feudal,{"Wood": 100},35,1000
+Stable,Feudal,{"Wood": 175},50,1500
+Town Center,Feudal,{"Wood": 275; "Stone": 100},150,2400
+Archery Range,Castle,{"Wood": 175},50,1800
+Barracks,Castle,{"Wood": 175},50,1800
+Blacksmith,Castle,{"Wood": 150},40,2100
+Castle,Castle,{"Stone": 650},200,4800
+Dock,Castle,{"Wood": 150},35,1800
+House,Castle,{"Wood": 30},25,900
+Lumber Camp,Castle,{"Wood": 100},35,1000
+Market,Castle,{"Wood": 175},60,2100
+Mill,Castle,{"Wood": 100},35,1000
+Mining Camp,Castle,{"Wood": 100},35,1000
+Monastery,Castle,{"Wood": 175},40,2100
+Siege Workshop,Castle,{"Wood": 200},40,2100
+Stable,Castle,{"Wood": 175},50,1800
+Town Center,Castle,{"Wood": 275; "Stone": 100},150,2400
+University,Castle,{"Wood": 200},60,2100
+Archery Range,Imperial,{"Wood": 175},50,2100
+Barracks,Imperial,{"Wood": 175},50,2100
+Blacksmith,Imperial,{"Wood": 150},40,2100
+Dock,Imperial,{"Wood": 150},35,1800
+House,Imperial,{"Wood": 30},25,900
+Lumber Camp,Imperial,{"Wood": 100},35,1000
+Market,Imperial,{"Wood": 175},60,2100
+Mill,Imperial,{"Wood": 100},35,1000
+Mining Camp,Imperial,{"Wood": 100},35,1000
+Monastery,Imperial,{"Wood": 175},40,2100
+Siege Workshop,Imperial,{"Wood": 200},40,2100
+Stable,Imperial,{"Wood": 175},50,2100
+Town Center,Imperial,{"Wood": 275; "Stone": 100},150,2400
+University,Imperial,{"Wood": 200},60,2100
+Wonder,Imperial,{"Wood": 1000; "Stone": 1000; "Gold": 1000},3503,4800
+Outpost,Dark,{"Wood": 25; "Stone": 10},15,500
+Palisade Wall,Dark,{"Wood": 2},5,250
+Gate,Feudal,{"Stone": 30},70,2750
+Stone Wall,Feudal,{"Stone": 5},8,1800
+Watch Tower,Feudal,{"Wood": 25; "Stone": 125},80,1020
+Fortified Wall,Castle,{"Stone": 5},8,3000
+Guard Tower,Castle,{"Wood": 25; "Stone": 125},80,1500
+Bombard Tower,Imperial,{"Wood": 25; "Stone": 125},80,2220
+Keep,Imperial,{"Wood": 25; "Stone": 125},80,2250
