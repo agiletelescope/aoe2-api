@@ -27,10 +27,10 @@ class Cost:
                  False otherwise
         """
         is_types_valid = all([
-            isinstance(self.gold, int),
-            isinstance(self.food, int),
-            isinstance(self.wood, int),
-            isinstance(self.stone, int),
+            type(self.gold) is int,
+            type(self.food) is int,
+            type(self.wood) is int,
+            type(self.stone) is int,
         ])
         if not is_types_valid:
             return False
@@ -59,3 +59,15 @@ class Cost:
                available.stone >= self.stone and \
                available.wood >= self.wood and \
                available.stone >= self.stone
+
+    @staticmethod
+    def copy_with(second):
+        if second is None:
+            return
+        if not isinstance(second, Cost):
+            return
+
+        return Cost(
+            second.gold, second.food,
+            second.wood, second.stone
+        )
