@@ -32,6 +32,8 @@ class Cost:
             isinstance(self.wood, int),
             isinstance(self.stone, int),
         ])
+        if not is_types_valid:
+            return False
 
         is_value_valid = all([
             0 <= self.gold <= MAX_RESOURCE_LIMIT,
@@ -39,8 +41,7 @@ class Cost:
             0 <= self.wood <= MAX_RESOURCE_LIMIT,
             0 <= self.stone <= MAX_RESOURCE_LIMIT
         ])
-
-        return is_types_valid and is_value_valid
+        return is_value_valid
 
     def can_create(self, available) -> bool:
         """
