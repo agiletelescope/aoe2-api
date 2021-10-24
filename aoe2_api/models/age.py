@@ -16,14 +16,14 @@ class Age(Enum):
     CASTLE = 2
     IMPERIAL = 3
 
-    def is_dark(self):
+    def is_dark(self) -> bool:
         return self == self.DARK
 
-    def is_feudal(self):
+    def is_feudal(self) -> bool:
         return self == self.FEUDAL
 
-    def is_castle(self):
+    def is_castle(self) -> bool:
         return self == self.CASTLE
 
-    def is_imperial(self):
+    def is_imperial(self) -> bool:
         return self == self.IMPERIAL
