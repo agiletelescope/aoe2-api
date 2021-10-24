@@ -10,10 +10,16 @@ class Cost:
     Available resources include Gold, Food, Wood and Stone
     """
 
-    gold: int = 0
-    food: int = 0
-    wood: int = 0
-    stone: int = 0
+    gold: int = None
+    food: int = None
+    wood: int = None
+    stone: int = None
+
+    def __post_init__(self):
+        self.gold = 0 if self.gold is None else self.gold
+        self.food = 0 if self.food is None else self.food
+        self.wood = 0 if self.wood is None else self.wood
+        self.stone = 0 if self.stone is None else self.stone
 
     @staticmethod
     def parse(self, value: str):
