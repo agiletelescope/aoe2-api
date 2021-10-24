@@ -7,7 +7,7 @@ from aoe2_api.shared.config import *
 class Cost:
     """
     Resources required to build/produce a unit,
-    Available resources include Gold, Food, Wood and Stone
+    Resource type include Gold, Food, Wood and Stone
     """
 
     gold: int = None
@@ -15,7 +15,7 @@ class Cost:
     wood: int = None
     stone: int = None
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         self.gold = 0 if self.gold is None else self.gold
         self.food = 0 if self.food is None else self.food
         self.wood = 0 if self.wood is None else self.wood
@@ -25,7 +25,7 @@ class Cost:
     def parse(self, value: str):
         pass
 
-    def is_valid(self):
+    def is_valid(self) -> bool:
         """
         datatype and limit validation
 
@@ -49,31 +49,19 @@ class Cost:
         ])
         return is_value_valid
 
-    def can_create(self, available) -> bool:
+    def __lt__(self, other) -> bool:
         """
         Check if the provided resources are enough to produce a unit/structure
 
-        :param available: Cost, cost available
+        :param other: Cost, cost available
         :return: Boolean, True if unit can be produced, False otherwise
         """
 
-        if not available.is_valid() or \
+        if not other.is_valid() or \
                 not self.is_valid():
             return False
 
-        return available.gold >= self.gold and \
-               available.stone >= self.stone and \
-               available.wood >= self.wood and \
-               available.stone >= self.stone
-
-    @staticmethod
-    def copy_with(second):
-        if second is None:
-            return
-        if not isinstance(second, Cost):
-            return
-
-        return Cost(
-            second.gold, second.food,
-            second.wood, second.stone
-        )
+        return other.gold >= self.gold and \
+               other.stone >= self.stone and \
+               other.wood >= self.wood and \
+               other.stone >= self.stone

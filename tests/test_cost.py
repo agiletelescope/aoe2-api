@@ -49,6 +49,7 @@ def test_cost_validity(gold: int, food: int, wood: int, stone: int, expected_ret
         (Cost(0, 0, 0, 0), Cost(1, 2, 3, 4), True),
         (Cost(10, 20, 30), Cost(100, 22, 30, 40), True),
         (Cost(), Cost(), True),
+        (Cost(1, 2, 3, 4), Cost(1, 2, 3, 4), True),
 
         # 3. Good Cost, False
         (Cost(10, 20, 30), Cost(), False),
@@ -59,4 +60,4 @@ def test_cost_validity(gold: int, food: int, wood: int, stone: int, expected_ret
     ]
 )
 def test_cost_can_create(first: Cost, second: Cost, expected_return: bool):
-    assert first.can_create(second) == expected_return
+    assert (first < second) == expected_return
