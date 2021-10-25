@@ -46,7 +46,8 @@ class Unit(Aoe2Parsable):
             age = Age.from_str(age.strip())
             cost = Cost.from_str(cost.strip())
 
-            parsed = Unit(name, age, cost, description, created_in)
+            parsed = Unit(name, age, cost,
+                          description.strip(), created_in.strip())
 
             return parsed \
                 if parsed.is_valid() else None

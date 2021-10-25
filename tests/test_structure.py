@@ -36,6 +36,7 @@ from aoe2_api.models.structure import Structure
         ("name", Age.DARK, Cost(gold=1), 1, 1, True),
         ("name", Age.DARK, Cost(food=1), 0, 10, True),      # Build time can be 0
         ("name", Age.CASTLE, Cost(wood=1), MAX_VALUE_LIMIT, 10, True),
+        ("name", Age.CASTLE, Cost(wood=1), 1, MAX_VALUE_LIMIT, True),
     ]
 )
 def test_structure_validity(name: str, age: Age, cost: Cost,
