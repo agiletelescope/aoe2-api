@@ -97,15 +97,25 @@ def test_cost_can_create(needed: Cost, available: Cost, expected_return: bool):
         ('{"Gold": True, "Stone": 10}', None),
         ('{"Gold": aaa, "Stone": 10}', None),
         ('{"Gold": {}, "Stone": 10}', None),
+        # Invalid json parse, extra ,
+        ('{"Gold": 900,}', None),
         ('{"Gold": 9, "Stone": 10, "xyz": -1}', Cost(gold=9, stone=10)),
         ('{"Gold": 9, "Stone": 10, "Food": -1}', None),
         ('{"Gold": 9, "Stone": 10, "xyz": 10}', Cost(gold=9, stone=10)),
         ('{"Gold": 9, "Stone": 10, "Wood": 0, "Food": 0}', Cost(gold=9, stone=10)),
-        ('{"Gold": 9, "Stone": 10, "Wood": 4, "Food": 11}',
-         Cost(gold=9, stone=10, wood=4, food=11)),
+        # Repeating params => Last one is considered
+        ('{"Gold": 9, "Stone": 10, "Wood": 4, "Food": 11, "Food": 110}',
+         Cost(gold=9, stone=10, wood=4, food=110)),
         ('{"Gold": 9, "Stone": 10, "Wood": 4, "Food": ' + str(MAX_VALUE_LIMIT) + '}',
          Cost(gold=9, stone=10, wood=4, food=MAX_VALUE_LIMIT)),
+        ('{"Gold": 9, "Stone": 10, "stone": 100}', Cost(gold=9, stone=10)),
         ('{"Gold": 9, "Stone": 10, "Wood": 4, "Food": ' + str(MAX_VALUE_LIMIT + 1) + '}', None),
+
+        # 4. Valid parses, with ; as the separator
+        ('{"Gold": 9; "Stone": 10; "xyz": 10}', Cost(gold=9, stone=10)),
+        ('{"Gold": 900;}', None),
+        ('{"Gold": 9; "Stone": 10; "Stone": 100}', Cost(gold=9, stone=100)),
+        ('{"Gold": 9; "Food": 10; "Stone": 100; "Wood": 1}', Cost(gold=9, stone=100, wood=1, food=10)),
     ]
 )
 def test_cost_str_parser(value: str, expected_output: Cost):

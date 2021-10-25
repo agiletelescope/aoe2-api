@@ -48,6 +48,7 @@ def test_structure_validity(name: str, age: Age, cost: Cost,
 
 
 @pytest.mark.parametrize(
+    # "," is assumed to be the separator
     "value, expected_output",
     [
         # 1. Invalid types
@@ -69,10 +70,23 @@ def test_structure_validity(name: str, age: Age, cost: Cost,
         # Name too large
         ("aa"*MAX_VALUE_LIMIT + ', Dark, {"Gold": 1}, 100, 10', None),
         (',, 0, {"Gold": 1}, 100, 10', None),
+        ('name, dark, {"Food": 1}, 1, 0', None),
+        ('name, dark, {"Food": 1}, ' + str(MAX_VALUE_LIMIT + 1) + ', 10', None),
+        ('name, dark, {"Food": 1}, 10, ' + str(MAX_VALUE_LIMIT + 1), None),
+        # Parse err, values and resources both split by ,
+        ('name, Feudal, {"Gold": 1, "Food": 2}, 100, 10', None),
 
         # 3. Valid cases
+        ('name,dark,{"Food": 1},1,1',
+         Structure("name", Age.DARK, Cost(food=1), 1, 1)),
+        ('name, dark, {"Food": 1}, 1, 1',                       # leading space before ,
+         Structure("name", Age.DARK, Cost(food=1), 1, 1)),
+        ('name, dark, {"Food": 1}, 0, 1',                       # Build time can be 0
+         Structure("name", Age.DARK, Cost(food=1), 0, 1)),
         ('[], CASTLE, {"Gold": 1}, 100, 10',                    # "[]" is a valid name
          Structure("[]", Age.CASTLE, Cost(gold=1), 100, 10)),
+        ('name, CASTLE, {"Gold": 1; "Food": 2}, 100, 10',
+         Structure("name", Age.CASTLE, Cost(gold=1, food=2), 100, 10)),
     ]
 )
 def test_structure_parse(value: str, expected_output: Structure):
