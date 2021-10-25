@@ -4,7 +4,7 @@ Default App Configurations
 """
 
 # Cost Configs
-MAX_VALUE_LIMIT = 10000
+MAX_VALUE_LIMIT = 5000
 
 
 # Data Parser

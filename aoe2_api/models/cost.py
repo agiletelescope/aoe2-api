@@ -23,22 +23,24 @@ class Cost:
         self.wood = 0 if self.wood is None else self.wood
         self.stone = 0 if self.stone is None else self.stone
 
-    def __lt__(self, other) -> bool:
+    def lte(self, other) -> bool:
         """
-        Check if the provided resources are enough to produce a unit/structure
+        Check if 'this' cost is less than or equal to 'other' cost
 
-        :param other: Cost, cost available
-        :return: Boolean, True if unit can be produced, False otherwise
+        :param other: Cost, the cost object to be compared with
+        :return:
         """
 
         if not other.is_valid() or \
                 not self.is_valid():
             return False
 
-        return other.gold >= self.gold and \
-               other.stone >= self.stone and \
-               other.wood >= self.wood and \
-               other.stone >= self.stone
+        return all([
+            other.gold >= self.gold,
+            other.food >= self.food,
+            other.wood >= self.wood,
+            other.stone >= self.stone
+            ])
 
     def is_valid(self) -> bool:
         """
@@ -62,7 +64,11 @@ class Cost:
             0 <= self.wood <= MAX_VALUE_LIMIT,
             0 <= self.stone <= MAX_VALUE_LIMIT
         ])
-        return are_values_valid
+
+        # Empty costs are invalid
+        return False \
+            if self.to_tuple() == (0, 0, 0, 0) \
+            else are_values_valid
 
     @staticmethod
     def from_str(value: str):
@@ -96,3 +102,12 @@ class Cost:
             # JSONDecodeError, Json parse error
             # AttributeError, attempt to call .get() on a non-dict obj
             return
+
+    def to_tuple(self):
+        """
+        Tuple representation of cost in format (gold, food, wood, stone)
+
+        :return:
+        """
+        return self.gold, self.food, \
+               self.wood, self.stone
