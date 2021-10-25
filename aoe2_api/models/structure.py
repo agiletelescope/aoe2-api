@@ -38,13 +38,16 @@ class Structure(Aoe2Parsable):
     @staticmethod
     def from_str(data):
 
+        if not isinstance(data, str):
+            return
+
         try:
             name, age, cost, build_time_sec, hit_points = \
                 data.split(DATA_DELIMITER)
-            age = Age.from_str(age)
-            cost = Cost.from_str(cost)
-            build_time_sec = int(build_time_sec)
-            hit_points = int(hit_points)
+            age = Age.from_str(age.strip())
+            cost = Cost.from_str(cost.strip())
+            build_time_sec = int(build_time_sec.strip())
+            hit_points = int(hit_points.strip())
 
             parsed = Structure(name, age, cost, build_time_sec, hit_points)
 
