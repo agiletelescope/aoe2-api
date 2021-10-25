@@ -89,14 +89,14 @@ def test_unit_validity(name: str, age: Age, cost: Cost,
 @pytest.mark.parametrize(
     "value, expected_output",
     [
-        # 1. Invalid types
+        # Invalid types
         (None, None),
         ([], None),
         (True, None),
         (1, None),
         ({}, None),
 
-        # 2. Bad values
+        # Bad values
         ("", None),
         ("abcd", None),
         ("1,2,3,4,5,6", None),
@@ -114,7 +114,7 @@ def test_unit_validity(name: str, age: Age, cost: Cost,
         ('name, dark, {"Food": 1}, , b', None),
         ('name, dark, {"Food": 1}, s, ', None),
 
-        # 3. Valid cases
+        # Valid cases
         ('name,dark,{"Food": 1},a,b',
          Unit("name", Age.DARK, Cost(food=1), "a", "b")),
         ('name, dark, {"Food": 1}, a, b',  # leading space before ,
