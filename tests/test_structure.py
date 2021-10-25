@@ -5,37 +5,79 @@ from aoe2_api.models.cost import Cost
 from aoe2_api.models.age import Age
 from aoe2_api.models.structure import Structure
 
+# Helpers
+_valid_cost = Cost(1)
+_valid_age = Age.DARK
+
 
 @pytest.mark.parametrize(
     "name, age, cost, build_time_sec, hit_points, expected_return",
     [
-        # 1. Bad data types
+        # Name
+        (None, _valid_age, _valid_cost, 1, 1, False),
+        ([], _valid_age, _valid_cost, 1, 1, False),
+        ({}, _valid_age, _valid_cost, 1, 1, False),
+        (True, _valid_age, _valid_cost, 1, 1, False),
+        (1, _valid_age, _valid_cost, 1, 1, False),
+        ("", _valid_age, _valid_cost, 1, 1, False),
+        ("a" * (MAX_VALUE_LIMIT + 1), _valid_age, _valid_cost, 1, 1, False),
+        ("a" * MAX_VALUE_LIMIT, _valid_age, _valid_cost, 1, 1, True),
+        ("valid_name", _valid_age, _valid_cost, 1, 1, True),
+
+        # Age
+        ("name", None, _valid_cost, 1, 1, False),
+        ("name", [], _valid_cost, 1, 1, False),
+        ("name", {}, _valid_cost, 1, 1, False),
+        ("name", "age", _valid_cost, 1, 1, False),
+        ("name", True, _valid_cost, 1, 1, False),
+        ("name", 1, _valid_cost, 1, 1, False),
+        ("name", Age.IMPERIAL, _valid_cost, 1, 1, True),
+
+        # Cost
+        ("name", _valid_age, None, 1, 1, False),
+        ("name", _valid_age, [], 1, 1, False),
+        ("name", _valid_age, {}, 1, 1, False),
+        ("name", _valid_age, "cost", 1, 1, False),
+        ("name", _valid_age, True, 1, 1, False),
+        ("name", _valid_age, 1, 1, 1, False),
+        ("name", _valid_age, Cost(), 1, 1, False),
+        ("name", _valid_age, Cost(1, 2, 3, 4), 1, 1, True),
+
+        # Build Time
+        ("name", _valid_age, _valid_cost, None, 1, False),
+        ("name", _valid_age, _valid_cost, [], 1, False),
+        ("name", _valid_age, _valid_cost, {}, 1, False),
+        ("name", _valid_age, _valid_cost, "time", 1, False),
+        ("name", _valid_age, _valid_cost, True, 1, False),
+        # Can't be negative
+        ("name", _valid_age, _valid_cost, -1, 1, False),
+        ("name", _valid_age, _valid_cost, 2*MAX_VALUE_LIMIT, 1, False),
+        ("name", _valid_age, _valid_cost, -2*MAX_VALUE_LIMIT, 1, False),
+        ("name", _valid_age, _valid_cost, MAX_VALUE_LIMIT, 1, True),
+        # 0 is a valid value
+        ("name", _valid_age, _valid_cost, 0, 1, True),
+        ("name", _valid_age, _valid_cost, MAX_VALUE_LIMIT - 1, 1, True),
+
+        # Hit points
+        ("name", _valid_age, _valid_cost, 1, None, False),
+        ("name", _valid_age, _valid_cost, 1, [], False),
+        ("name", _valid_age, _valid_cost, 1, {}, False),
+        ("name", _valid_age, _valid_cost, 1, "hp", False),
+        ("name", _valid_age, _valid_cost, 1, True, False),
+        # Unit health can't be 0
+        ("name", _valid_age, _valid_cost, 1, 0, False),
+        ("name", _valid_age, _valid_cost, 1, -1, False),
+        ("name", _valid_age, _valid_cost, 1, 2*MAX_VALUE_LIMIT, False),
+        ("name", _valid_age, _valid_cost, 1, -2 * MAX_VALUE_LIMIT, False),
+
+        # Random
         (1, 2, 3, 4, 5, False),
-        ("name1", None, Cost(wood=1), 10, 10, False),
-        ("name1", True, Cost(wood=1), 10, 10, False),
-        ("name2", [], Cost(stone=1), 10, 10, False),
-        ("name3", Age.DARK, {}, 10, 10, False),
-        ("name4", Age.IMPERIAL, Cost(food=1), "abcd", 10, False),
-        ("name5", Age.FEUDAL, Cost(gold=1), None, [], False),
-
-        # 2. Bad values
-        ("", Age.DARK, Cost(food=1), 10, 10, False),        # Empty name
-        ("name", Age.DARK, Cost(), 10, 10, False),          # Empty cost
-        ("name", Age.DARK, Cost(food=1), 10, 0, False),     # Hit points can't be 0
-        ("name", Age.DARK, Cost(food=1), -1, 10, False),    # Hit points can't be negative
-        ("name", Age.DARK, Cost(food=1), 1, -100, False),   # Build time can't be negative
-        ("name", Age.DARK, Cost(wood=MAX_VALUE_LIMIT+1),
-         10, 10, False),                                    # Resources too high
-        ("name", Age.DARK,
-         Cost(gold=MAX_VALUE_LIMIT+1), 10, 10, False),      # gold > max limit
-        ("name", Age.DARK, Cost(gold=1), 10, 0, False),     # hit_points < 1
-        ("a" * (MAX_VALUE_LIMIT + 1),
-         Age.DARK, Cost(gold=1), 1, 1, False),              # Name too large
-
-        # 3. Valid cases
-        ("name", Age.DARK, Cost(gold=1), 1, 1, True),
-        ("name", Age.DARK, Cost(food=1), 0, 10, True),      # Build time can be 0
-        ("name", Age.CASTLE, Cost(wood=1), MAX_VALUE_LIMIT, 10, True),
+        ("", Age.DARK, Cost(food=1), 10, 10, False),
+        ("name", Age.DARK, Cost(), 10, 10, False),
+        ("name", Age.DARK, Cost(food=1), -1, 10, False),
+        ("name", Age.DARK, Cost(wood=MAX_VALUE_LIMIT+1), 10, 10, False),
+        ("a" * (MAX_VALUE_LIMIT + 1), Age.DARK, Cost(gold=1), 1, 1, False),
+        ("name", _valid_age, _valid_cost, 1, 1, True),
         ("name", Age.CASTLE, Cost(wood=1), 1, MAX_VALUE_LIMIT, True),
     ]
 )
@@ -61,6 +103,7 @@ def test_structure_validity(name: str, age: Age, cost: Cost,
         ({}, None),
 
         # 2. Bad values
+        ("", None),
         ("abcd", None),
         ("1,2,3,4,5,6", None),
         ("a,b,"*10, None),
