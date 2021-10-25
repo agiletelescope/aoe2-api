@@ -1,4 +1,3 @@
-name,age,cost,build_time,hit_points
 Barracks,Dark,{"Wood": 175},50,1200
 Dock,Dark,{"Wood": 150},35,1800
 Farm,Dark,{"Wood": 60},15,480

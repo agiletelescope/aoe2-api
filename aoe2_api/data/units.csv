@@ -1,4 +1,3 @@
-name,description,age,created_in,cost
 Archer,Quick and light. Weak at close range; excels at battle from distance,Feudal,Archery Range,{"Wood": 25;"Gold": 45}
 Crossbowman,Upgraded archer,Castle,Archery Range,{"Wood": 25;"Gold": 45}
 Arbalest,Upgraded crossbowman,Imperial,Archery Range,{"Wood": 25;"Gold": 45}

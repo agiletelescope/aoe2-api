@@ -11,11 +11,12 @@ from aoe2_api.models.structure import Structure
     [
         # 1. Bad data types
         (1, 2, 3, 4, 5, False),
-        ("name1", None, Cost(), 10, 10, False),
-        ("name2", [], Cost(), 10, 10, False),
+        ("name1", None, Cost(wood=1), 10, 10, False),
+        ("name1", True, Cost(wood=1), 10, 10, False),
+        ("name2", [], Cost(stone=1), 10, 10, False),
         ("name3", Age.DARK, {}, 10, 10, False),
-        ("name4", Age.IMPERIAL, Cost(), "abcd", 10, False),
-        ("name5", Age.FEUDAL, Cost(), None, [], False),
+        ("name4", Age.IMPERIAL, Cost(food=1), "abcd", 10, False),
+        ("name5", Age.FEUDAL, Cost(gold=1), None, [], False),
 
         # 2. Bad values
         ("", Age.DARK, Cost(food=1), 10, 10, False),        # Empty name
