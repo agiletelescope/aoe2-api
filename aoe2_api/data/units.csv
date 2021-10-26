@@ -1,99 +1,99 @@
-Archer,Quick and light. Weak at close range; excels at battle from distance,Feudal,Archery Range,{"Wood": 25;"Gold": 45}
-Crossbowman,Upgraded archer,Castle,Archery Range,{"Wood": 25;"Gold": 45}
-Arbalest,Upgraded crossbowman,Imperial,Archery Range,{"Wood": 25;"Gold": 45}
-Cavalry Archer,Fast with ranged attack. Ideal for hit-and-run attacks,Castle,Archery Range,{"Wood": 40;"Gold": 70}
-Heavy Cavalry Archer,Upgraded Cavalry Archer,Imperial,Archery Range,{"Wood": 40;"Gold": 70}
-Hand Cannoneer,Powerful close attack; inaccurate at range. Attack bonus against spearman +11 in total,Imperial,Archery Range,{"Food": 45;"Gold": 50}
-Skirmisher,Ranged unit equipped with armor vs. archer attacks,Feudal,Archery Range,{"Food": 25;"Wood": 35}
-Elite Skirmisher,Upgraded skirmisher,Castle,Archery Range,{"Food": 25;"Wood": 35}
-Eagle Warrior,Fast infantry with extensive sight; resists conversion; attack bonus vs. Monks,Dark,Barracks,{"info":"1 Unit free at the start of the game for Aztecs and Mayans"}
-Eagle Warrior,Fast infantry with extensive sight; resists conversion; attack bonus vs. Monks,Castle,Barracks,{"Food": 20;"Gold": 50}
-Elite Eagle Warrior,Upgraded Eagle Warrior,Imperial,Barracks,{"Food": 20;"Gold": 50}
-Spearman,Medium infantry,Feudal,Barracks,{"Food": 35;"Wood": 15}
-Pikeman,Upgraded Spearman,Castle,Barracks,{"Food": 35;"Wood": 25}
-Halberdier,Upgraded Pikeman,Imperial,Barracks,{"Food": 35;"Wood": 25}
-Militia,Basic infantry swordsman. Quick and cheap to create,Dark,Barracks,{"Food": 60;"Gold": 20}
-Man-at-Arms,Upgraded Militia. Attack bonus vs. buildings,Feudal,Barracks,{"Food": 60;"Gold": 20}
-Long Swordsman,Upgraded Man-at-Arms,Castle,Barracks,{"Food": 60;"Gold": 20}
-Two-Handed Swordsman,Upgraded Long Swordsman. Attack bonus vs. buildings,Imperial,Barracks,{"Food": 60;"Gold": 20}
-Champion,Upgraded Two-Handed Swordsman,Imperial,Barracks,{"Food": 60;"Gold": 20}
-King,Cannot be produced so the cost and build time just for the sake of interest,Dark,Castle,{"Food": 50}
-Petard,Demolition infantry unit armed with explosives. Bonuses add up - for example against walls and gates: +500 buildings +900 walls = +1400 bonus attack,Castle,Castle,{"Food": 80;"Gold": 20}
-Trebuchet,Powerful siege weapon used to destroy buildings and walls from long distance. Cannot fire on close units. Must be packed to move and unpacked to attack. Can cut paths through forests. Unpack time: 0:11,Imperial,Castle,{"Wood": 200;"Gold": 200}
-Trebuchet (packed),Powerful siege weapon used to destroy buildings and walls from long distance. Cannot fire on close units. Must be packed to move and unpacked to attack. Can cut paths through forests. Unpack time: 0:11,Imperial,Castle,{"Wood": 200;"Gold": 200}
-Cannon Galleon,Long-range warship used to attack targets on shore to establish beachhead. Fires slowly and has minimum range,Imperial,Dock,{"Wood": 200;"Gold": 150}
-Elite Cannon Galleon,Upgraded Cannon Galleon,Imperial,Dock,{"Wood": 200;"Gold": 150}
-Demolition Ship,Filled with explosives. Self-destructs when used. Pilot near enemy ships and detonate to wrest control of the sea from an entrenched opponent,Castle,Dock,{"Wood": 70;"Gold": 50}
-Heavy Demolition Ship,Upgraded Demolition Ship,Imperial,Dock,{"Wood": 70;"Gold": 50}
-Fire Ship,Spews fire at other ships. Good at sinking galleys. Attack shows pierce attack,Castle,Dock,{"Wood": 75;"Gold": 45}
-Fast Fire Ship,Upgraded Fire Ship,Imperial,Dock,{"Wood": 75;"Gold": 45}
-Galley,Small and fast ship with weak attack. Used to scout the water and for early attacks on enemy fishing fleets,Feudal,Dock,{"Wood": 90;"Gold": 30}
-War Galley,Upgraded Galley,Castle,Dock,{"Wood": 90;"Gold": 30}
-Galleon,Upgraded War Galley,Imperial,Dock,{"Wood": 90;"Gold": 30}
-Longboat,Viking unique unit. Fires multiple arrows. volley of 4 arrows (7-1-1-1). Castle needed. Because of the multiple arrows the delay between starts of attacks is roughly 3.34,Castle,Dock,{"Wood": 80;"Gold": 40}
-Elite Longboat,Upgraded Longboat,Imperial,Dock,{"Wood": 80;"Gold": 40}
-Fishing Ship,Ship to harvest fish (resource),Dark,Dock,{"Wood": 75}
-Trade Cog,Movement rate 2.00 with caravan,Feudal,Dock,{"Wood": 100;"Gold": 50}
-Transport Ship,Ship to carry units. Garrison inside 5 (10 with careening and 20 with dry dock),Feudal,Dock,{"Wood": 125}
-Turtle Ship,Korean unique unit. Slow and ironclad battleship used to destroy other ships at close range,Castle,Dock,{"Wood": 200;"Gold": 200}
-Elite Turtle Ship,Upgraded Turtle Ship,Imperial,Dock,{"Wood": 200;"Gold": 200}
-Horse,Can be used as scout,Dark,Gaia,{"Cost":"No cost"}
-Wolf,Wild wolf. Gives no food just kills people. Line of sight also depends on difficulty (4-12 LOS),Dark,Gaia,{"Cost":"No cost"}
-Jaguar,Wild jaguar. Same as wolf on yucatan and other americas maps,Dark,Gaia,{"Cost":"No cost"}
-Trade Cart,Used to trade with other players by land. Carries goods from your Market to another player's Market and brings back gold. The farther the Market the higher your profit,Feudal,Market,{"Wood": 100;"Gold": 50}
-Missionary,Spanish unique unit. Mounted monk,Castle,Monastery,{"Gold": 100}
-Monk,Slow and weak. Converts enemy units and ships to your civilization (player color). Heals wounded villagers and military units (except siege weapons),Castle,Monastery,{"Gold": 100}
-Bombard Cannon,Powerful mobile anti-building siege weapon,Imperial,Siege Workshop,{"Wood": 225;"Gold": 225}
-Mangonel,Wheeled siege weapon used to attack a small mass of units. Area of effect attack. Can attack ground. Weak vs. close nonranged units,Castle,Siege Workshop,{"Wood": 160;"Gold": 135}
-Onager,Upgraded Mangonel,Imperial,Siege Workshop,{"Wood": 160;"Gold": 135}
-Siege Onager,Upgraded Onager,Imperial,Siege Workshop,{"Wood": 160;"Gold": 135}
-Battering Ram,Slow and lumbering siege weapon used to reduce enemy towns to ruins. Can garrison 4 units (affects movement rate +0.05 per unit),Castle,Siege Workshop,{"Wood": 160;"Gold": 75}
-Capped Ram,Upgraded Battering Ram. Can garrison 4 units (affects movement rate +0.05 per unit). Max speed at 0.7,Imperial,Siege Workshop,{"Wood": 160;"Gold": 75}
-Siege Ram,Upgraded Capped Ram. Can garrison 6 units (affects movement rate +0.05 per unit),Imperial,Siege Workshop,{"Wood": 160;"Gold": 75}
-Scorpion,Damage to all units in the path,Castle,Siege Workshop,{"Wood": 75;"Gold": 75}
-Heavy Scorpion,Upgraded Scorpion,Imperial,Siege Workshop,{"Wood": 75;"Gold": 75}
-Camel,Excels at killing other mounted units. (not classified as cavalry),Castle,Stable,{"Food": 55;"Gold": 60}
-Heavy Camel,Upgraded Camel. Attack bonus vs. cavalry. (not classified as cavalry),Imperial,Stable,{"Food": 55;"Gold": 60}
-Knight,Fast and heavy cavalry,Castle,Stable,{"Food": 60;"Gold": 75}
-Cavalier,Upgraded Knight,Imperial,Stable,{"Food": 60;"Gold": 75}
-Paladin,Upgraded Cavalier,Imperial,Stable,{"Food": 60;"Gold": 75}
-Scout Cavalry,Fast with extensive line of sight. Resistant to conversion +2 Line of sight per age,Feudal,Stable,{"Food": 80}
-Light Cavalry,Upgraded scout cavalry. +2 Line of sight per age,Castle,Stable,{"Food": 80}
-Hussar,Upgraded Light Cavalry. +2 Line of sight per age,Imperial,Stable,{"Food": 80}
-Villager,Gathers resources. Builds and repairs buildings. Also repairs ships and siege weapons,Dark,Town Center,{"Food": 50}
-Berserk,Viking unique unit. Infantry that slowly heals itself,Castle,Castle,{"Food": 65;"Gold": 25}
-Elite Berserk,Upgraded Berserk,Imperial,Castle,{"Food": 65;"Gold": 25}
-Cataphract,Byzantine unique unit. Heavily armored cavalry,Castle,Castle,{"Food": 70;"Gold": 75}
-Elite Cataphract,Upgraded Cataphract,Imperial,Castle,{"Food": 70;"Gold": 75}
-Chu Ko Nu,Chinese unique unit. Archer with mediocre range. Shoots a volley of 2 extra arrows with 3 attack. Because of the multiple arrows the delay between starts of attacks is more (roughly 3.6),Castle,Castle,{"Wood": 40;"Gold": 35}
-Elite Chu Ko Nu,Upgraded Chu Ko NU,Imperial,Castle,{"Wood": 40;"Gold": 35}
-Conquistador,Spanish unique unit. Mounted Hand Cannoneer. Powerful close attack but inaccurate at range. (Only archer armor upgrades apply from blacksmith not range or attack),Castle,Castle,{"Food": 60;"Gold": 70}
-Elite Conquistador,Upgraded Conquistador,Imperial,Castle,{"Food": 60;"Gold": 70}
-Huskarl,Gothic unique unit. Infantry with substantial pierce armor; virtually immune to archer fire. Attack bonus vs. buildings and archers,Castle,Castle,{"Food": 52;"Gold": 26}
-Elite Huskarl,Upgraded Huskarl,Imperial,Castle,{"Food": 52;"Gold": 26}
-Jaguar Warrior,Aztec unique unit. Attack bonus vs. other infantry,Castle,Castle,{"Food": 60;"Gold": 30}
-Elite Jaguar Warrior,Upgraded Jaguar Warrior,Castle,Castle,{"Food": 60;"Gold": 30}
-Janissary,Turkish unique unit. Hand Cannoneer with longer range and no minimum range,Castle,Castle,{"Food": 60;"Gold": 55}
-Elite Janissary,Upgraded Janissary,Imperial,Castle,{"Food": 60;"Gold": 55}
-Longbowman,British unique unit. Powerful archer with long range,Castle,Castle,{"Wood": 35;"Gold": 40}
-Elite Longbowman,Upgraded Longbowman,Imperial,Castle,{"Wood": 35;"Gold": 40}
-Mameluke,Saracen unique unit. Camel with hand-to-hand attack at distance. Excels vs. other mounted units,Castle,Castle,{"Food": 55;"Gold": 85}
-Elite Mameluke,Upgraded Mameluke,Imperial,Castle,{"Food": 55;"Gold": 85}
-Mangudai,Mongol unique unit. Cavalry archer with attack bonus vs. siege weapons,Castle,Castle,{"Wood": 55;"Gold": 65}
-Elite Mangudai,Upgraded Mangudai,Imperial,Castle,{"Wood": 55;"Gold": 65}
-Plumed Archer,Mayan unique unit. Strong fast and well-armored archer with less attack than other archers,Castle,Castle,{"Wood": 37;"Gold": 37}
-Elite Plumed Archer,Upgraded Plumed Archer,Castle,Castle,{"Wood": 32;"Gold": 32}
-Samurai,Japanese unique unit. Infantry with fast attack. Attack bonus vs. other unique units and buildings,Castle,Castle,{"Food": 60;"Gold": 30}
-Elite Samurai,Upgraded Samurai,Imperial,Castle,{"Food": 60;"Gold": 30}
-Tarkan,Hun unique unit. Cavalry with attack bonus vs. buildings. (Attack bonuses stack - for example +16 against a palisade wall (8 buildings + 8 walls)),Castle,Castle,{"Food": 60;"Gold": 60}
-Elite Tarkan,Upgraded Tarkan,Castle,Castle,{"Food": 60;"Gold": 60}
-Teutonic Knight,Teutonic unique unit. Infantry with effective armor and slow but powerful attack,Castle,Castle,{"Food": 85;"Gold": 40}
-Elite Teutonic Knight,Upgraded Teutonic Knight,Imperial,Castle,{"Food": 85;"Gold": 40}
-Throwing Axeman,Frankish unique unit. Infantry with ranged attack,Castle,Castle,{"Food": 55;"Gold": 25}
-Elite Throwing Axeman,Upgraded Throwing Axeman,Imperial,Castle,{"Food": 55;"Gold": 25}
-War Elephant,Persian unique unit. Slow powerful strong and well-armored cavalry,Castle,Castle,{"Food": 200;"Gold": 75}
-Elite War Elephant,Upgraded War Elephant,Imperial,Castle,{"Food": 200;"Gold": 75}
-War Wagon,Korean unique unit. Heavily armored horse-drawn archery unit,Castle,Castle,{"Wood": 120;"Gold": 60}
-Elite War Wagon,Upgraded War Wagon,Imperial,Castle,{"Wood": 120;"Gold": 60}
-Woad Raider,Celtic unique unit. Exceptionally quick infantry. Attack bonus vs. buildings,Castle,Castle,{"Food": 65;"Gold": 25}
-Elite Woad Raider,Upgraded Woad Raider,Imperial,Castle,{"Food": 65;"Gold": 25}
+Archer,Feudal,{"Wood": 25;"Gold": 45},Quick and light. Weak at close range; excels at battle from distance,Archery Range
+Crossbowman,Castle,{"Wood": 25;"Gold": 45},Upgraded archer,Archery Range
+Arbalest,Imperial,{"Wood": 25;"Gold": 45},Upgraded crossbowman,Archery Range
+Cavalry Archer,Castle,{"Wood": 40;"Gold": 70},Fast with ranged attack. Ideal for hit-and-run attacks,Archery Range
+Heavy Cavalry Archer,Imperial,{"Wood": 40;"Gold": 70},Upgraded Cavalry Archer,Archery Range
+Hand Cannoneer,Imperial,{"Food": 45;"Gold": 50},Powerful close attack; inaccurate at range. Attack bonus against spearman +11 in total,Archery Range
+Skirmisher,Feudal,{"Food": 25;"Wood": 35},Ranged unit equipped with armor vs. archer attacks,Archery Range
+Elite Skirmisher,Castle,{"Food": 25;"Wood": 35},Upgraded skirmisher,Archery Range
+Eagle Warrior,Dark,{"info":"1 Unit free at the start of the game for Aztecs and Mayans"},Fast infantry with extensive sight; resists conversion; attack bonus vs. Monks,Barracks
+Eagle Warrior,Castle,{"Food": 20;"Gold": 50},Fast infantry with extensive sight; resists conversion; attack bonus vs. Monks,Barracks
+Elite Eagle Warrior,Imperial,{"Food": 20;"Gold": 50},Upgraded Eagle Warrior,Barracks
+Spearman,Feudal,{"Food": 35;"Wood": 15},Medium infantry,Barracks
+Pikeman,Castle,{"Food": 35;"Wood": 25},Upgraded Spearman,Barracks
+Halberdier,Imperial,{"Food": 35;"Wood": 25},Upgraded Pikeman,Barracks
+Militia,Dark,{"Food": 60;"Gold": 20},Basic infantry swordsman. Quick and cheap to create,Barracks
+Man-at-Arms,Feudal,{"Food": 60;"Gold": 20},Upgraded Militia. Attack bonus vs. buildings,Barracks
+Long Swordsman,Castle,{"Food": 60;"Gold": 20},Upgraded Man-at-Arms,Barracks
+Two-Handed Swordsman,Imperial,{"Food": 60;"Gold": 20},Upgraded Long Swordsman. Attack bonus vs. buildings,Barracks
+Champion,Imperial,{"Food": 60;"Gold": 20},Upgraded Two-Handed Swordsman,Barracks
+King,Dark,{"Food": 50},Cannot be produced so the cost and build time just for the sake of interest,Castle
+Petard,Castle,{"Food": 80;"Gold": 20},Demolition infantry unit armed with explosives. Bonuses add up - for example against walls and gates: +500 buildings +900 walls = +1400 bonus attack,Castle
+Trebuchet,Imperial,{"Wood": 200;"Gold": 200},Powerful siege weapon used to destroy buildings and walls from long distance. Cannot fire on close units. Must be packed to move and unpacked to attack. Can cut paths through forests. Unpack time: 0:11,Castle
+Trebuchet (packed),Imperial,{"Wood": 200;"Gold": 200},Powerful siege weapon used to destroy buildings and walls from long distance. Cannot fire on close units. Must be packed to move and unpacked to attack. Can cut paths through forests. Unpack time: 0:11,Castle
+Cannon Galleon,Imperial,{"Wood": 200;"Gold": 150},Long-range warship used to attack targets on shore to establish beachhead. Fires slowly and has minimum range,Dock
+Elite Cannon Galleon,Imperial,{"Wood": 200;"Gold": 150},Upgraded Cannon Galleon,Dock
+Demolition Ship,Castle,{"Wood": 70;"Gold": 50},Filled with explosives. Self-destructs when used. Pilot near enemy ships and detonate to wrest control of the sea from an entrenched opponent,Dock
+Heavy Demolition Ship,Imperial,{"Wood": 70;"Gold": 50},Upgraded Demolition Ship,Dock
+Fire Ship,Castle,{"Wood": 75;"Gold": 45},Spews fire at other ships. Good at sinking galleys. Attack shows pierce attack,Dock
+Fast Fire Ship,Imperial,{"Wood": 75;"Gold": 45},Upgraded Fire Ship,Dock
+Galley,Feudal,{"Wood": 90;"Gold": 30},Small and fast ship with weak attack. Used to scout the water and for early attacks on enemy fishing fleets,Dock
+War Galley,Castle,{"Wood": 90;"Gold": 30},Upgraded Galley,Dock
+Galleon,Imperial,{"Wood": 90;"Gold": 30},Upgraded War Galley,Dock
+Longboat,Castle,{"Wood": 80;"Gold": 40},Viking unique unit. Fires multiple arrows. volley of 4 arrows (7-1-1-1). Castle needed. Because of the multiple arrows the delay between starts of attacks is roughly 3.34,Dock
+Elite Longboat,Imperial,{"Wood": 80;"Gold": 40},Upgraded Longboat,Dock
+Fishing Ship,Dark,{"Wood": 75},Ship to harvest fish (resource),Dock
+Trade Cog,Feudal,{"Wood": 100;"Gold": 50},Movement rate 2.00 with caravan,Dock
+Transport Ship,Feudal,{"Wood": 125},Ship to carry units. Garrison inside 5 (10 with careening and 20 with dry dock),Dock
+Turtle Ship,Castle,{"Wood": 200;"Gold": 200},Korean unique unit. Slow and ironclad battleship used to destroy other ships at close range,Dock
+Elite Turtle Ship,Imperial,{"Wood": 200;"Gold": 200},Upgraded Turtle Ship,Dock
+Horse,Dark,{"Cost":"No cost"},Can be used as scout,Gaia
+Wolf,Dark,{"Cost":"No cost"},Wild wolf. Gives no food just kills people. Line of sight also depends on difficulty (4-12 LOS),Gaia
+Jaguar,Dark,{"Cost":"No cost"},Wild jaguar. Same as wolf on yucatan and other americas maps,Gaia
+Trade Cart,Feudal,{"Wood": 100;"Gold": 50},Used to trade with other players by land. Carries goods from your Market to another player's Market and brings back gold. The farther the Market the higher your profit,Market
+Missionary,Castle,{"Gold": 100},Spanish unique unit. Mounted monk,Monastery
+Monk,Castle,{"Gold": 100},Slow and weak. Converts enemy units and ships to your civilization (player color). Heals wounded villagers and military units (except siege weapons),Monastery
+Bombard Cannon,Imperial,{"Wood": 225;"Gold": 225},Powerful mobile anti-building siege weapon,Siege Workshop
+Mangonel,Castle,{"Wood": 160;"Gold": 135},Wheeled siege weapon used to attack a small mass of units. Area of effect attack. Can attack ground. Weak vs. close nonranged units,Siege Workshop
+Onager,Imperial,{"Wood": 160;"Gold": 135},Upgraded Mangonel,Siege Workshop
+Siege Onager,Imperial,{"Wood": 160;"Gold": 135},Upgraded Onager,Siege Workshop
+Battering Ram,Castle,{"Wood": 160;"Gold": 75},Slow and lumbering siege weapon used to reduce enemy towns to ruins. Can garrison 4 units (affects movement rate +0.05 per unit),Siege Workshop
+Capped Ram,Imperial,{"Wood": 160;"Gold": 75},Upgraded Battering Ram. Can garrison 4 units (affects movement rate +0.05 per unit). Max speed at 0.7,Siege Workshop
+Siege Ram,Imperial,{"Wood": 160;"Gold": 75},Upgraded Capped Ram. Can garrison 6 units (affects movement rate +0.05 per unit),Siege Workshop
+Scorpion,Castle,{"Wood": 75;"Gold": 75},Damage to all units in the path,Siege Workshop
+Heavy Scorpion,Imperial,{"Wood": 75;"Gold": 75},Upgraded Scorpion,Siege Workshop
+Camel,Castle,{"Food": 55;"Gold": 60},Excels at killing other mounted units. (not classified as cavalry),Stable
+Heavy Camel,Imperial,{"Food": 55;"Gold": 60},Upgraded Camel. Attack bonus vs. cavalry. (not classified as cavalry),Stable
+Knight,Castle,{"Food": 60;"Gold": 75},Fast and heavy cavalry,Stable
+Cavalier,Imperial,{"Food": 60;"Gold": 75},Upgraded Knight,Stable
+Paladin,Imperial,{"Food": 60;"Gold": 75},Upgraded Cavalier,Stable
+Scout Cavalry,Feudal,{"Food": 80},Fast with extensive line of sight. Resistant to conversion +2 Line of sight per age,Stable
+Light Cavalry,Castle,{"Food": 80},Upgraded scout cavalry. +2 Line of sight per age,Stable
+Hussar,Imperial,{"Food": 80},Upgraded Light Cavalry. +2 Line of sight per age,Stable
+Villager,Dark,{"Food": 50},Gathers resources. Builds and repairs buildings. Also repairs ships and siege weapons,Town Center
+Berserk,Castle,{"Food": 65;"Gold": 25},Viking unique unit. Infantry that slowly heals itself,Castle
+Elite Berserk,Imperial,{"Food": 65;"Gold": 25},Upgraded Berserk,Castle
+Cataphract,Castle,{"Food": 70;"Gold": 75},Byzantine unique unit. Heavily armored cavalry,Castle
+Elite Cataphract,Imperial,{"Food": 70;"Gold": 75},Upgraded Cataphract,Castle
+Chu Ko Nu,Castle,{"Wood": 40;"Gold": 35},Chinese unique unit. Archer with mediocre range. Shoots a volley of 2 extra arrows with 3 attack. Because of the multiple arrows the delay between starts of attacks is more (roughly 3.6),Castle
+Elite Chu Ko Nu,Imperial,{"Wood": 40;"Gold": 35},Upgraded Chu Ko NU,Castle
+Conquistador,Castle,{"Food": 60;"Gold": 70},Spanish unique unit. Mounted Hand Cannoneer. Powerful close attack but inaccurate at range. (Only archer armor upgrades apply from blacksmith not range or attack),Castle
+Elite Conquistador,Imperial,{"Food": 60;"Gold": 70},Upgraded Conquistador,Castle
+Huskarl,Castle,{"Food": 52;"Gold": 26},Gothic unique unit. Infantry with substantial pierce armor; virtually immune to archer fire. Attack bonus vs. buildings and archers,Castle
+Elite Huskarl,Imperial,{"Food": 52;"Gold": 26},Upgraded Huskarl,Castle
+Jaguar Warrior,Castle,{"Food": 60;"Gold": 30},Aztec unique unit. Attack bonus vs. other infantry,Castle
+Elite Jaguar Warrior,Castle,{"Food": 60;"Gold": 30},Upgraded Jaguar Warrior,Castle
+Janissary,Castle,{"Food": 60;"Gold": 55},Turkish unique unit. Hand Cannoneer with longer range and no minimum range,Castle
+Elite Janissary,Imperial,{"Food": 60;"Gold": 55},Upgraded Janissary,Castle
+Longbowman,Castle,{"Wood": 35;"Gold": 40},British unique unit. Powerful archer with long range,Castle
+Elite Longbowman,Imperial,{"Wood": 35;"Gold": 40},Upgraded Longbowman,Castle
+Mameluke,Castle,{"Food": 55;"Gold": 85},Saracen unique unit. Camel with hand-to-hand attack at distance. Excels vs. other mounted units,Castle
+Elite Mameluke,Imperial,{"Food": 55;"Gold": 85},Upgraded Mameluke,Castle
+Mangudai,Castle,{"Wood": 55;"Gold": 65},Mongol unique unit. Cavalry archer with attack bonus vs. siege weapons,Castle
+Elite Mangudai,Imperial,{"Wood": 55;"Gold": 65},Upgraded Mangudai,Castle
+Plumed Archer,Castle,{"Wood": 37;"Gold": 37},Mayan unique unit. Strong fast and well-armored archer with less attack than other archers,Castle
+Elite Plumed Archer,Castle,{"Wood": 32;"Gold": 32},Upgraded Plumed Archer,Castle
+Samurai,Castle,{"Food": 60;"Gold": 30},Japanese unique unit. Infantry with fast attack. Attack bonus vs. other unique units and buildings,Castle
+Elite Samurai,Imperial,{"Food": 60;"Gold": 30},Upgraded Samurai,Castle
+Tarkan,Castle,{"Food": 60;"Gold": 60},Hun unique unit. Cavalry with attack bonus vs. buildings. (Attack bonuses stack - for example +16 against a palisade wall (8 buildings + 8 walls)),Castle
+Elite Tarkan,Castle,{"Food": 60;"Gold": 60},Upgraded Tarkan,Castle
+Teutonic Knight,Castle,{"Food": 85;"Gold": 40},Teutonic unique unit. Infantry with effective armor and slow but powerful attack,Castle
+Elite Teutonic Knight,Imperial,{"Food": 85;"Gold": 40},Upgraded Teutonic Knight,Castle
+Throwing Axeman,Castle,{"Food": 55;"Gold": 25},Frankish unique unit. Infantry with ranged attack,Castle
+Elite Throwing Axeman,Imperial,{"Food": 55;"Gold": 25},Upgraded Throwing Axeman,Castle
+War Elephant,Castle,{"Food": 200;"Gold": 75},Persian unique unit. Slow powerful strong and well-armored cavalry,Castle
+Elite War Elephant,Imperial,{"Food": 200;"Gold": 75},Upgraded War Elephant,Castle
+War Wagon,Castle,{"Wood": 120;"Gold": 60},Korean unique unit. Heavily armored horse-drawn archery unit,Castle
+Elite War Wagon,Imperial,{"Wood": 120;"Gold": 60},Upgraded War Wagon,Castle
+Woad Raider,Castle,{"Food": 65;"Gold": 25},Celtic unique unit. Exceptionally quick infantry. Attack bonus vs. buildings,Castle
+Elite Woad Raider,Imperial,{"Food": 65;"Gold": 25},Upgraded Woad Raider,Castle
