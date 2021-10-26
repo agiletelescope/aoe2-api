@@ -1,0 +1,6 @@
+a,Quick and light. Weak at close range; excels at battle from distance,Feudal,Archery Range,{"Wood": 25;"Gold": 45}
+b,Upgraded archer,Castle,Archery Range,{"Wood": 25;"Gold": 45}
+c,Upgraded crossbowman,Imperial,Archery Range,{"Wood": 25;"Gold": 45}
+d,Fast with ranged attack. Ideal for hit-and-run attacks,Castle,Archery Range,{"Wood": 40;"Gold": 70}
+e,Upgraded Cavalry Archer,Imperial,Archery Range,{"Wood": 40;"Gold": 70}
+f,Powerful close attack; inaccurate at range. Attack bonus against spearman +11 in total,Imperial,Archery Range,{"Food": 45;"Gold": 50}

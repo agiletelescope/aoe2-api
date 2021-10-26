@@ -1,0 +1,7 @@
+a,Dark,{"Wood": 175},50,1200
+b,Feudal,{"Stone": 150},35,1800
+c,castle,{"Gold": 60},15,480
+d,dark,{"Food": 60},5,48
+e,IMPERIAL,{"Food": 60; "Wood": 10; "Gold": 1; "Stone": 9},50,800
+f,asdf,{"Wood": 175},1,1
+f,asdf,true,0,0
