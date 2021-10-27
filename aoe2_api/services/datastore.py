@@ -1,4 +1,5 @@
 from aoe2_api.shared.statuscodes import *
+from aoe2_api.shared.config import DefaultConfig
 from aoe2_api.models.structure import Structure
 from aoe2_api.models.unit import Unit
 from aoe2_api.models.cost import Cost
@@ -12,7 +13,15 @@ class DataStore:
     Responsible for parsing the csv data files and storing the data
     """
 
-    def __init__(self, s_file_path, u_file_path):
+    def __init__(self, flask_app):
+
+        # Load the file path configs
+        s_file_path = DefaultConfig.STRUCTURES_DATA_FILE_PATH
+        u_file_path = DefaultConfig.UNITS_DATA_FILE_PATH
+        if flask_app is not None:
+            s_file_path = flask_app.config["STRUCTURES_DATA_FILE_PATH"]
+            u_file_path = flask_app.config["UNITS_DATA_FILE_PATH"]
+
         self.structure_parser = CsvParser(s_file_path, Structure)
         self.unit_parser = CsvParser(u_file_path, Unit)
 
@@ -71,3 +80,17 @@ class DataStore:
             return []
 
         return list(filter(lambda u: u.can_create(cost), self.units))
+
+
+def init_datastore(flask_app) -> None:
+    global s_datastore
+    if s_datastore is not None:
+        return
+
+    s_datastore = DataStore(flask_app)
+
+
+"""
+Singleton DataStore Instance
+"""
+s_datastore = None

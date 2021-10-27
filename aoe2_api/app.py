@@ -3,6 +3,7 @@ from flask import jsonify
 
 from aoe2_api.shared.config import DevConfig
 from aoe2_api.shared.config import TestConfig
+from aoe2_api.services.datastore import init_datastore
 
 
 def create_app(is_testing=False):
@@ -12,8 +13,8 @@ def create_app(is_testing=False):
     flask_app.config.from_object(
         TestConfig if is_testing else DevConfig)
 
-    # Init Datastore
-    # TODO
+    # Load data and init datastore
+    init_datastore(flask_app)
 
     # Init flask blueprints
     from aoe2_api.routes.structures.routes import bp_structures

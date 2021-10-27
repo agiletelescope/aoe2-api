@@ -1,6 +1,5 @@
 import pytest
 
-from aoe2_api.shared.config import TestConfig
 from aoe2_api.models.cost import Cost
 from aoe2_api.services.datastore import DataStore
 
@@ -35,13 +34,11 @@ from tests.conftest import mock_structures
         (Cost(gold=60, wood=10, food=60, stone=10), mock_structures[2:5]),
     ]
 )
-def test_filter_structures(cost: Cost, expected_output: list):
-    datastore = DataStore(
-        TestConfig.STRUCTURES_DATA_FILE_PATH,
-        TestConfig.UNITS_DATA_FILE_PATH)
-    assert isinstance(datastore, DataStore)
+def test_filter_structures(app, cost: Cost, expected_output: list):
+    from aoe2_api.services.datastore import s_datastore
+    assert isinstance(s_datastore, DataStore)
 
-    ret = datastore.filter_structures(cost)
+    ret = s_datastore.filter_structures(cost)
     assert type(ret) == list
     assert ret == expected_output
 
@@ -75,12 +72,10 @@ def test_filter_structures(cost: Cost, expected_output: list):
         (Cost(gold=60, wood=10, food=60, stone=10), [mock_units[0]]),
     ]
 )
-def test_filter_units(cost: Cost, expected_output: list):
-    datastore = DataStore(
-        TestConfig.STRUCTURES_DATA_FILE_PATH,
-        TestConfig.UNITS_DATA_FILE_PATH)
-    assert isinstance(datastore, DataStore)
+def test_filter_units(app, cost: Cost, expected_output: list):
+    from aoe2_api.services.datastore import s_datastore
+    assert isinstance(s_datastore, DataStore)
 
-    ret = datastore.filter_units(cost)
+    ret = s_datastore.filter_units(cost)
     assert type(ret) == list
     assert ret == expected_output
