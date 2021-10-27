@@ -8,5 +8,9 @@ Runs the flask app
 
 
 if __name__ == "__main__":
-    app = create_app()
+    app, ret = create_app()
+    if app is None:
+        print("Error starting server, code: ", ret)
+        exit(0)
+
     app.run()

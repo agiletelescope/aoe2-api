@@ -44,8 +44,10 @@ mock_units = [
 
 @pytest.fixture
 def app():
-    flask_app = create_app(is_testing=True)
-    # Return the flask test client
+    flask_app, _ = create_app(is_testing=True)
+    # Return from create_app can be safely ignored in this case
+    # Because if flask init fails, the tests fail aswell
+
     return flask_app.test_client()
 
 

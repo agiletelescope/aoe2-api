@@ -5,7 +5,7 @@ from flask import Blueprint
 
 from aoe2_api.shared.statuscodes import *
 from aoe2_api.models.cost import Cost
-from aoe2_api.services.datastore import s_datastore
+from aoe2_api.services.datastore import datastore
 
 bp_structures = Blueprint('structures', __name__)
 
@@ -39,7 +39,8 @@ def get_structures():
         gold=gold, food=food, wood=wood, stone=stone)
     if not available_cost.is_valid():
         abort(400, INVALID_DATA_FORMAT)
-    if s_datastore is None:
+    if datastore is None:
         abort(400, DATA_STORE_BAD)
 
-    return jsonify({"data": "data"}), 201
+    data = datastore.filter_structures(cost=available_cost)
+    return jsonify({"data": data}), 201

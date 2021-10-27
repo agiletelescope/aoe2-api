@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import jsonify
 
+from aoe2_api.shared.statuscodes import *
 from aoe2_api.shared.config import DevConfig
 from aoe2_api.shared.config import TestConfig
 from aoe2_api.services.datastore import init_datastore
@@ -14,9 +15,11 @@ def create_app(is_testing=False):
         TestConfig if is_testing else DevConfig)
 
     # Load data and init datastore
-    init_datastore(flask_app)
+    ret = init_datastore(flask_app)
+    if ret != SUCCESS:
+        return None, ret
 
-    # Init flask blueprints
+    # Post data load, init flask blueprints
     from aoe2_api.routes.structures.routes import bp_structures
     from aoe2_api.routes.units.routes import bp_units
     flask_app.register_blueprint(bp_structures, url_prefix="/structures")
@@ -31,4 +34,4 @@ def create_app(is_testing=False):
     def error_handler(e):
         return jsonify({'code': e.code, 'message': str(e)}), e.code
 
-    return flask_app
+    return flask_app, SUCCESS

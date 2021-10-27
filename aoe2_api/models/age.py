@@ -16,13 +16,6 @@ class Age(Enum):
     CASTLE = 2
     IMPERIAL = 3
 
-    mapping = {
-        DARK: "Dark",
-        FEUDAL: "Feudal",
-        CASTLE: "Castle",
-        IMPERIAL: "Imperial"
-    }
-
     def get_str_repr(self) -> list:
         """
         Return all possible string representation of the current age

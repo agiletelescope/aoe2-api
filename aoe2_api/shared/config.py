@@ -18,7 +18,7 @@ class DefaultConfig:
     SECRET_KEY = os.urandom(24)
 
     # Data Configs
-    DATA_DIRECTORY = "data"
+    DATA_DIRECTORY = "aoe2_api/data"
     STRUCTURES_DATA_FILE_PATH = DATA_DIRECTORY + "/structures.csv"
     UNITS_DATA_FILE_PATH = DATA_DIRECTORY + "/units.csv"
 

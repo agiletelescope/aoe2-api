@@ -28,10 +28,7 @@ class DataStore:
         self.structures = []
         self.units = []
 
-        # Automatically load data
-        self.load_data()
-
-    def load_data(self) -> None:
+    def load_data(self) -> int:
         """
         Parse data from csv files and store them.
         :return: StatusCode, 0 if successful else error code
@@ -82,15 +79,17 @@ class DataStore:
         return list(filter(lambda u: u.can_create(cost), self.units))
 
 
-def init_datastore(flask_app) -> None:
-    global s_datastore
-    if s_datastore is not None:
-        return
+def init_datastore(flask_app) -> int:
+    global datastore
+    if datastore is not None:
+        # Datastore already initialized
+        return SUCCESS
 
-    s_datastore = DataStore(flask_app)
+    datastore = DataStore(flask_app)
+    return datastore.load_data()
 
 
 """
 Singleton DataStore Instance
 """
-s_datastore = None
+datastore = None
