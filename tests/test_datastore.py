@@ -1,6 +1,6 @@
 import pytest
 
-from aoe2_api.shared.config import *
+from aoe2_api.shared.config import TestConfig
 from aoe2_api.models.cost import Cost
 from aoe2_api.services.datastore import DataStore
 
@@ -37,8 +37,8 @@ from tests.conftest import mock_structures
 )
 def test_filter_structures(cost: Cost, expected_output: list):
     datastore = DataStore(
-        MOCK_STRUCTURES_FILE_PATH,
-        MOCK_UNITS_DATA_FILE_PATH)
+        TestConfig.STRUCTURES_DATA_FILE_PATH,
+        TestConfig.UNITS_DATA_FILE_PATH)
     assert isinstance(datastore, DataStore)
 
     ret = datastore.filter_structures(cost)
@@ -77,8 +77,8 @@ def test_filter_structures(cost: Cost, expected_output: list):
 )
 def test_filter_units(cost: Cost, expected_output: list):
     datastore = DataStore(
-        MOCK_STRUCTURES_FILE_PATH,
-        MOCK_UNITS_DATA_FILE_PATH)
+        TestConfig.STRUCTURES_DATA_FILE_PATH,
+        TestConfig.UNITS_DATA_FILE_PATH)
     assert isinstance(datastore, DataStore)
 
     ret = datastore.filter_units(cost)

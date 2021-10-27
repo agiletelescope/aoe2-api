@@ -1,18 +1,34 @@
+import os
 
 """
-Default App Configurations
+App Configurations
 """
 
-# Cost Configs
-MAX_VALUE_LIMIT = 5000
-
-
-# Data
 DATA_DELIMITER = ","
 DATA_COST_DELIMITER = ";"
-DATA_DIRECTORY = "data"
-TEST_DATA_DIRECTORY = "tests/data"
-STRUCTURES_DATA_FILE_PATH = DATA_DIRECTORY + "/structures.csv"
-UNITS_DATA_FILE_PATH = DATA_DIRECTORY + "/units.csv"
-MOCK_STRUCTURES_FILE_PATH = TEST_DATA_DIRECTORY + "/mock_structures.csv"
-MOCK_UNITS_DATA_FILE_PATH = TEST_DATA_DIRECTORY + "/mock_units.csv"
+MAX_VALUE_LIMIT = 1000
+
+
+class DefaultConfig:
+
+    # Flask App Configs
+    DEBUG = False
+    TESTING = False
+    SECRET_KEY = os.urandom(24)
+
+    # Data Configs
+    DATA_DIRECTORY = "data"
+    STRUCTURES_DATA_FILE_PATH = DATA_DIRECTORY + "/structures.csv"
+    UNITS_DATA_FILE_PATH = DATA_DIRECTORY + "/units.csv"
+
+
+class DevConfig(DefaultConfig):
+    DEBUG = True
+
+
+class TestConfig(DefaultConfig):
+    DEBUG = True
+    TESTING = True
+
+    # Test Data Configs
+    DATA_DIRECTORY = "tests/data"
