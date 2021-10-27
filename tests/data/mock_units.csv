@@ -1,7 +1,5 @@
-a,desc1,Feudal,building1,{"Wood": 2}
-b,desc2,IMPERIAL,building2,{"Wood": 25;"Gold": 45}
-c,desc3,Castle,building2,{"Wood": 25;"Gold": 45;"Stone": 10}
-b,desc4,FEUDAL,building2,{"Wood": 25;"Gold": 45}
-e,desc5,dark,building1,{"Wood": 25;"Gold": 45}
-1,2,3,4,5
-hello
+a,Feudal,{"Wood": 2},desc1,building1
+b,IMPERIAL,{"Wood": 25;"Gold": 45},desc2,building2
+c,Castle,{"Wood": 25;"Gold": 45;"Stone": 10},desc3,building2
+d,FEUDAL,{"Wood": 25;"Gold": 45},desc4,building2
+e,dark,{"Wood": 25;"Gold": 45},desc5,building1

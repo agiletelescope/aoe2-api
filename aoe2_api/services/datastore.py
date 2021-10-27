@@ -1,4 +1,3 @@
-from aoe2_api.shared.config import *
 from aoe2_api.shared.statuscodes import *
 from aoe2_api.models.structure import Structure
 from aoe2_api.models.unit import Unit
@@ -13,12 +12,15 @@ class DataStore:
     Responsible for parsing the csv data files and storing the data
     """
 
-    def __init__(self):
-        self.structure_parser = CsvParser(STRUCTURES_DATA_FILE_PATH, Structure)
-        self.unit_parser = CsvParser(UNITS_DATA_FILE_PATH, Unit)
+    def __init__(self, s_file_path, u_file_path):
+        self.structure_parser = CsvParser(s_file_path, Structure)
+        self.unit_parser = CsvParser(u_file_path, Unit)
 
         self.structures = []
         self.units = []
+
+        # Automatically load data
+        self.load_data()
 
     def load_data(self) -> None:
         """
@@ -26,11 +28,11 @@ class DataStore:
         :return: StatusCode, 0 if successful else error code
         """
 
-        ret, structures = self.structure_parser.parse_file()
+        structures, ret = self.structure_parser.parse_file()
         if ret != SUCCESS:
             return ret
 
-        ret, units = self.unit_parser.parse_file()
+        units, ret = self.unit_parser.parse_file()
         if ret != SUCCESS:
             return ret
 
@@ -47,7 +49,12 @@ class DataStore:
         :return: List of structures
         """
 
-        return [s.cost.lte(cost) for s in self.structures]
+        if not isinstance(cost, Cost):
+            return []
+        if not cost.is_valid():
+            return []
+
+        return list(filter(lambda s: s.can_create(cost), self.structures))
 
     def filter_units(self, cost: Cost) -> list:
         """
@@ -58,4 +65,9 @@ class DataStore:
         :return: List of units
         """
 
-        return [u.cost.lte(cost) for u in self.units]
+        if not isinstance(cost, Cost):
+            return []
+        if not cost.is_valid():
+            return []
+
+        return list(filter(lambda u: u.can_create(cost), self.units))
