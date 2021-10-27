@@ -1,5 +1,6 @@
 import os
 import sys
+import pytest
 
 # Make server accessible for tests
 api_dir = os.path.dirname(os.path.abspath(__file__)) + '/../'
@@ -9,6 +10,19 @@ from aoe2_api.models.age import Age
 from aoe2_api.models.cost import Cost
 from aoe2_api.models.unit import Unit
 from aoe2_api.models.structure import Structure
+from aoe2_api.app import create_app
+
+"""
+Pytest Config file,
+Houses all initializations and fixtures
+
+Pytest Docs - https://docs.pytest.org/en/6.2.x/
+Pytest Fixtures - https://docs.pytest.org/en/6.2.x/fixture.html
+Pytest Parameterized testing - https://docs.pytest.org/en/6.2.x/example/parametrize.html
+Flask Testing Docs - https://flask.palletsprojects.com/en/2.0.x/testing/
+
+pytest -v (verbose) -s (show print statements)
+"""
 
 
 # Mock Data
@@ -26,3 +40,21 @@ mock_units = [
     Unit("d", Age.FEUDAL, Cost(wood=25, gold=45), "desc4", "building2"),
     Unit("e", Age.DARK, Cost(wood=25, gold=45), "desc5", "building1"),
 ]
+
+
+@pytest.fixture
+def app():
+    flask_app = create_app(is_testing=True)
+    # Return the flask test client
+    return flask_app.test_client()
+
+
+@pytest.fixture
+def structures_data():
+    return mock_structures
+
+
+@pytest.fixture
+def units_data():
+    return mock_units
+
