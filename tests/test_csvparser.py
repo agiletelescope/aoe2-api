@@ -1,6 +1,7 @@
 import pytest
 
 from aoe2_api.shared.config import *
+from aoe2_api.shared.config import TestConfig
 from aoe2_api.shared.statuscodes import *
 from aoe2_api.models.cost import Cost
 from aoe2_api.models.unit import Unit
@@ -12,7 +13,7 @@ from tests.conftest import mock_units
 
 # Helper constants
 _valid_blueprint = Structure
-_valid_filename = MOCK_STRUCTURES_FILE_PATH
+_valid_filename = TestConfig.STRUCTURES_DATA_FILE_PATH
 _ret_filename_bad = (None, DATA_FILE_PATH_BAD)
 _ret_blueprint_bad = (None, BLUEPRINT_BAD)
 
@@ -42,7 +43,7 @@ _ret_blueprint_bad = (None, BLUEPRINT_BAD)
         # All Valid
         (_valid_filename, _valid_blueprint, (mock_structures, SUCCESS)),
         (_valid_filename, Structure, (mock_structures, SUCCESS)),
-        (MOCK_UNITS_DATA_FILE_PATH, Unit, (mock_units, SUCCESS)),
+        (TestConfig.UNITS_DATA_FILE_PATH, Unit, (mock_units, SUCCESS)),
     ]
 )
 def test_csv_parser(filename: str, blueprint, expected_output):

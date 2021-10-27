@@ -4,9 +4,10 @@ import os
 App Configurations
 """
 
+# Build independent configs
 DATA_DELIMITER = ","
 DATA_COST_DELIMITER = ";"
-MAX_VALUE_LIMIT = 1000
+MAX_VALUE_LIMIT = 5000
 
 
 class DefaultConfig:
@@ -32,3 +33,5 @@ class TestConfig(DefaultConfig):
 
     # Test Data Configs
     DATA_DIRECTORY = "tests/data"
+    STRUCTURES_DATA_FILE_PATH = DATA_DIRECTORY + "/mock_structures.csv"
+    UNITS_DATA_FILE_PATH = DATA_DIRECTORY + "/mock_units.csv"

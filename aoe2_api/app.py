@@ -1,14 +1,33 @@
 from flask import Flask
+from flask import jsonify
+
+from aoe2_api.shared.config import DevConfig
+from aoe2_api.shared.config import TestConfig
 
 
-def create_app():
+def create_app(is_testing=False):
 
     # Init Flask app
     flask_app = Flask(__name__)
+    flask_app.config.from_object(
+        TestConfig if is_testing else DevConfig)
 
-    # Routes
-    @flask_app.route("/")
-    def homepage():
-        return "home"
+    # Init Datastore
+    # TODO
+
+    # Init flask blueprints
+    from aoe2_api.routes.structures.routes import bp_structures
+    from aoe2_api.routes.units.routes import bp_units
+    flask_app.register_blueprint(bp_structures, url_prefix="/structures")
+    flask_app.register_blueprint(bp_units, url_prefix="/units")
+
+    # Generic Error Handlers
+    @flask_app.errorhandler(400)  # Bad request
+    @flask_app.errorhandler(401)  # Un-authorized
+    @flask_app.errorhandler(404)  # Not found
+    @flask_app.errorhandler(405)  # method not allowed
+    @flask_app.errorhandler(500)  # Internal server error
+    def error_handler(e):
+        return jsonify({'code': e.code, 'message': str(e)}), e.code
 
     return flask_app
