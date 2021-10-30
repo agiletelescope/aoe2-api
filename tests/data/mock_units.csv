@@ -3,3 +3,10 @@ b,IMPERIAL,{"Wood": 25;"Gold": 45},desc2,building2
 c,Castle,{"Wood": 25;"Gold": 45;"Stone": 10},desc3,building2
 d,FEUDAL,{"Wood": 25;"Gold": 45},desc4,building2
 e,dark,{"Wood": 25;"Gold": 45},desc5,building1
+f,feudal,{"Food": 5;"Stone": 18},desc,building
+g,castle,{"Gold": 2;"Wood": 771},desc,building
+h,Castle,{"Food": 83;"Stone": 2},desc,building
+i,invalid,{"Wood": 199;"Gold": 5},desc,building
+j,invalid,{"One": 25;"Two": 45},desc5,0
+k,DARK,{"Gold": 1},desc,building
+l,Feudal,{"Stone": 10; "Gold": 1},desc,building

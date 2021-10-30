@@ -42,6 +42,11 @@ mock_units = [
     Unit("c", Age.CASTLE, Cost(wood=25, gold=45, stone=10), "desc3", "building2"),
     Unit("d", Age.FEUDAL, Cost(wood=25, gold=45), "desc4", "building2"),
     Unit("e", Age.DARK, Cost(wood=25, gold=45), "desc5", "building1"),
+    Unit("f", Age.FEUDAL, Cost(food=5, stone=18), "desc", "building"),
+    Unit("g", Age.CASTLE, Cost(gold=2, wood=771), "desc", "building"),
+    Unit("h", Age.CASTLE, Cost(food=83, stone=2), "desc", "building"),
+    Unit("k", Age.DARK, Cost(gold=1), "desc", "building"),
+    Unit("l", Age.FEUDAL, Cost(gold=1, stone=10), "desc", "building"),
 ]
 
 
