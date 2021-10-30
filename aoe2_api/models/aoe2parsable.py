@@ -9,7 +9,6 @@ from aoe2_api.shared.config import *
 
 @dataclass
 class Aoe2Parsable(ABC):
-
     """
     Abstract blueprint for an in-game parsable object,
     ex. Structure, Unit, Civilization etc
@@ -26,12 +25,11 @@ class Aoe2Parsable(ABC):
 
     @abstractmethod
     def is_valid(self) -> bool:
-
         are_types_valid = all([
             type(self.name) is str,
             isinstance(self.age, Age),
             isinstance(self.cost, Cost),
-            ])
+        ])
         if not are_types_valid:
             return False
 
@@ -43,9 +41,30 @@ class Aoe2Parsable(ABC):
         ])
         return are_values_valid
 
+    def to_json(self):
+        """
+        Generate a map of all keys to their values
+        """
+
+        return {k: self._get_val_repr(v)
+                for k, v in vars(self).items()}
+
     def can_create(self, cost: Cost) -> bool:
         """
         Non abstract method, checks if this unit can be created
         """
 
         return self.cost.lte(cost)
+
+    @staticmethod
+    def _get_val_repr(value):
+        """
+        Return the representation of a given value in its json form
+        """
+
+        if type(value) is Cost:
+            return value.to_json()
+        if type(value) is Age:
+            return str(value)
+
+        return value

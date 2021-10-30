@@ -66,3 +66,10 @@ class Age(Enum):
 
         # No match found
         return
+
+    def __str__(self):
+        reprs = self.get_str_repr()
+        if len(reprs) >= 1:
+            return reprs[0]
+
+        return ""

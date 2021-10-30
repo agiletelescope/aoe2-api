@@ -30,8 +30,9 @@ from tests.conftest import mock_structures
         (Cost(gold=1), []),
         (Cost(gold=59), []),
         (Cost(gold=70), [mock_structures[2]]),
-        (Cost(gold=20, wood=30, food=60), [mock_structures[3]]),
-        (Cost(gold=60, wood=10, food=60, stone=10), mock_structures[2:5]),
+        (Cost(gold=20, wood=30, food=60),
+         [mock_structures[i] for i in [3, 5, 7]]),
+        (Cost(gold=60, wood=10, food=60, stone=10), mock_structures[2:6]),
     ]
 )
 def test_filter_structures(app, cost: Cost, expected_output: list):

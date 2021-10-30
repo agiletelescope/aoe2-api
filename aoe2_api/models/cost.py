@@ -94,16 +94,39 @@ class Cost:
                 int(value.get("Stone", 0))
             )
 
-            # cost != Cost() ensures that not all parsed attributes were wrong or 0
-            if cost.is_valid() and cost != Cost():
-                return cost
+            return cost if cost.is_valid() \
+                else None
         except (TypeError, ValueError, JSONDecodeError, AttributeError):
             # ValueError, dict values aren't int
             # JSONDecodeError, Json parse error
             # AttributeError, attempt to call .get() on a non-dict obj
             return
 
-    def to_tuple(self):
+    @staticmethod
+    def from_dict(value: dict):
+        """
+        Parse a dict to obtain the cost object
+
+        :param value:
+        :return:
+        """
+
+        if value is None:
+            return
+        if type(value) is not dict:
+            return
+
+        # Parse the dict for resource values, with 0 as the default
+        gold = 0 or value.get('gold')
+        food = 0 or value.get('food')
+        wood = 0 or value.get('wood')
+        stone = 0 or value.get('stone')
+
+        cost = Cost(gold=gold, food=food, wood=wood, stone=stone)
+        return cost if cost.is_valid() \
+            else None
+
+    def to_tuple(self) -> ():
         """
         Tuple representation of cost in format (gold, food, wood, stone)
 
@@ -111,3 +134,7 @@ class Cost:
         """
         return self.gold, self.food, \
                self.wood, self.stone
+
+    def to_json(self) -> dict:
+        cls_vars = vars(self)
+        return {k: v for k, v in cls_vars.items() if v is not 0}

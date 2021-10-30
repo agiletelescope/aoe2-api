@@ -161,6 +161,36 @@ def test_cost_str_parser(value: str, expected_output: Cost):
 
 
 @pytest.mark.parametrize(
+    "value, expected_return",
+    [
+        # Invalid types
+        (None, None),
+        ([], None),
+        (11, None),
+        ("invalid", None),
+        (True, None),
+
+        # Types good
+        ({}, None),
+        ({"gold": 10, "random": 10}, Cost(gold=10)),
+        ({"gold": 87, "wood": 92}, Cost(gold=87, wood=92)),
+        ({"invalid1": 13, "invalid2": 83}, None),
+        ({"gold": 13, "food": 83, "wood": 5, "stone": 88},
+         Cost(gold=13, food=83, wood=5, stone=88)),
+        ({"gold": 0, "food": 83, "wood": 5, "stone": 88},
+         Cost(food=83, wood=5, stone=88)),
+        ({"gold": -1, "food": 83, "wood": 5, "stone": 88}, None),
+        ({"gold": 38, "food": [], "wood": 5, "stone": 88}, None),
+        ({"gold": 38, "food": 199, "wood": True, "stone": 88}, None),
+    ]
+)
+def test_cost_from_dict(value: dict, expected_return):
+    c = Cost.from_dict(value)
+    assert type(c) == Cost or c is None
+    assert c == expected_return
+
+
+@pytest.mark.parametrize(
     "cost1, cost2, expected_return",
     [
         # Bad cost

@@ -30,17 +30,12 @@ def get_structures():
 
     # Process query filters, default to 0
     body = request.get_json() or {}
-    gold = body.get('gold') or 0
-    food = body.get('food') or 0
-    wood = body.get('wood') or 0
-    stone = body.get('stone') or 0
+    available_cost = Cost.from_dict(body)
 
-    available_cost = Cost(
-        gold=gold, food=food, wood=wood, stone=stone)
-    if not available_cost.is_valid():
+    if available_cost is None:
         abort(400, INVALID_DATA_FORMAT)
     if datastore is None:
         abort(400, DATA_STORE_BAD)
 
     data = datastore.filter_structures(cost=available_cost)
-    return jsonify({"data": data}), 201
+    return jsonify({"data": [s.to_json() for s in data]}), 201
