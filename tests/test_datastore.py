@@ -63,14 +63,18 @@ def test_filter_structures(app, cost: Cost, expected_output: list):
         (Cost(wood=1), []),
         (Cost(wood=10), [mock_units[0]]),
         (Cost(wood=25, gold=50), [
-            mock_units[0],
-            mock_units[1],
-            mock_units[3],
-            mock_units[4],
+            mock_units[i] for i in [0, 1, 3, 4, 8]
         ]),
-        (Cost(wood=25, gold=45, stone=10), mock_units),
-        (Cost(gold=20, wood=30, food=60), [mock_units[0]]),
-        (Cost(gold=60, wood=10, food=60, stone=10), [mock_units[0]]),
+        (Cost(wood=25, gold=45, stone=10), [
+            mock_units[i] for i in [0, 1, 2, 3, 4, 8, 9]
+        ]),
+        (Cost(gold=20, wood=30, food=60), [
+            mock_units[i] for i in [0, 8]
+        ]),
+        (Cost(gold=60, wood=10, food=60, stone=10), [
+            mock_units[i] for i in [0, 8, 9]
+        ]),
+        (Cost(wood=1000, gold=1000, stone=1000, food=1000), mock_units),
     ]
 )
 def test_filter_units(app, cost: Cost, expected_output: list):
