@@ -88,26 +88,81 @@ DATA_STORE_BAD = -3001
 
 ## API
 
-##### Body Params
+###### Body Params
 Name | Type | Description
 --- | --- | ---
-`gold` | Int | Available Gold, Optional
-`food` | Int | Available Food, Optional
-`wood` | Int | Available Wood, Optional
-`stone` | Int | Available Stone, Optional
+`gold` | Integer | Available Gold, Optional
+`food` | Integer | Available Food, Optional
+`wood` | Integer | Available Wood, Optional
+`stone` | Integer | Available Stone, Optional
 
 
-##### Endpoints
-Name | Route | Request Type | Description
---- | --- | --- | ---- 
-Structures | `/structures` | `POST` | Retrieve all structures that match the body query
-Units | `/units`  | `POST` | Retrieve all units that match the body query
+###### Endpoints
+Route | Request Type | Description
+--- | --- | ---- 
+`/structures` | `POST` | Retrieve all structures that match the body query
+`/units`  | `POST` | Retrieve all units that match the body query
 
+###### Success response format
+```
+{
+  "data": [  ...  ]
+}
+```
 
-##### Error response format
+###### Error response format
 ```
 {
   "code": <Status Code of the error>,
   "message: <Description of the error>
+}
+```
+
+### Examples
+###### Success
+Name | Value
+--- | ---
+Route | `/structures`
+Request | `POST`
+Body  | ``` { "gold": 10, "food": 20, "wood": 13, "stone": 5 } ```  
+
+###### Response
+```
+{
+    "data": [
+        {
+            "age": "feudal",
+            "build_time_sec": 8,
+            "cost": {
+                "stone": 5
+            },
+            "hit_points": 1800,
+            "name": "Stone Wall"
+        },
+        {
+            "age": "castle",
+            "build_time_sec": 8,
+            "cost": {
+                "stone": 5
+            },
+            "hit_points": 3000,
+            "name": "Fortified Wall"
+        }
+    ]
+}
+```
+
+###### Error
+Name | Value
+--- | ---
+Route | `/structures`
+Request | `POST`
+Body  | ``` { "gold": -1 } ```  
+
+###### Response
+```
+{
+    "code": -2001,
+    "message": "400 Bad Request: -2001"
 }
 ```
