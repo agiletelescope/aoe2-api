@@ -28,7 +28,7 @@ class Cost:
         Check if 'this' cost is less than or equal to 'other' cost
 
         :param other: Cost, the cost object to be compared with
-        :return:
+        :return: Boolean, True if this is less than other
         """
 
         if not other.is_valid() or \
@@ -107,8 +107,8 @@ class Cost:
         """
         Parse a dict to obtain the cost object
 
-        :param value:
-        :return:
+        :param value: map object to be parsed
+        :return: Cost if map is value, None otherwise
         """
 
         if value is None:
@@ -129,12 +129,15 @@ class Cost:
     def to_tuple(self) -> ():
         """
         Tuple representation of cost in format (gold, food, wood, stone)
-
-        :return:
         """
+
         return self.gold, self.food, \
                self.wood, self.stone
 
     def to_json(self) -> dict:
+        """
+        A map of all keys to their values
+        """
+
         cls_vars = vars(self)
-        return {k: v for k, v in cls_vars.items() if v is not 0}
+        return {k: v for k, v in cls_vars.items() if v != 0}

@@ -46,13 +46,14 @@ class DataStore:
         self.units = units
         return SUCCESS
 
-    def filter_structures(self, cost: Cost) -> list:
+    @staticmethod
+    def _filter_items(cost: Cost, items) -> list:
         """
-        Get a list of all structures that can be built with
+        Get a list of all items (Structures/Units) that can be built/created with
             "cost" amount of resources
 
         :param cost: Cost, available resources
-        :return: List of structures
+        :return: List of items
         """
 
         if not isinstance(cost, Cost):
@@ -60,23 +61,13 @@ class DataStore:
         if not cost.is_valid():
             return []
 
-        return list(filter(lambda s: s.can_create(cost), self.structures))
+        return list(filter(lambda s: s.can_create(cost), items))
+
+    def filter_structures(self, cost: Cost) -> list:
+        return self._filter_items(cost, self.structures)
 
     def filter_units(self, cost: Cost) -> list:
-        """
-        Get a list of all unit that can be created with
-            "cost" amount of resources
-
-        :param cost: Cost, available resources
-        :return: List of units
-        """
-
-        if not isinstance(cost, Cost):
-            return []
-        if not cost.is_valid():
-            return []
-
-        return list(filter(lambda u: u.can_create(cost), self.units))
+        return self._filter_items(cost, self.units)
 
 
 def init_datastore(flask_app) -> int:

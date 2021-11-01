@@ -38,6 +38,10 @@ class CsvParser:
         return True
 
     def parse_file(self):
+        """
+        Parse a file to obtain data as a list of objects
+        """
+
         if not self._validate_filename():
             return None, DATA_FILE_PATH_BAD
         if not self._validate_blueprint():

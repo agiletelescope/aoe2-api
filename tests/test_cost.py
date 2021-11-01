@@ -58,10 +58,10 @@ from aoe2_api.models.cost import Cost
         ("a", [], True, Cost(), False),
         (0, None, None, None, False),
         (None, None, None, None, False),
-        (0, 0, 0, 0, False),  # Empty cost
-        (-1, -1929, 0, 0, False),  # Gold value < 0
-        (0, MAX_VALUE_LIMIT + 1, 0, 0, False),  # Food value > limit
-        (0.21, 9.32, 88, 91, False),  # Decimal values
+        (0, 0, 0, 0, False),                        # Empty cost
+        (-1, -1929, 0, 0, False),                   # Gold value < 0
+        (0, MAX_VALUE_LIMIT + 1, 0, 0, False),      # Food value > limit
+        (0.21, 9.32, 88, 91, False),                # Decimal values
         (10, 20, 88, 91, True),
         (1000, 0, MAX_VALUE_LIMIT - 1, 0, True),
         (10, 20, MAX_VALUE_LIMIT, 91, True),
@@ -76,7 +76,7 @@ def test_cost_validity(gold: int, food: int, wood: int, stone: int, expected_ret
 
 
 @pytest.mark.parametrize(
-    "needed, available, expected_return",
+    "reqd, available, expected_return",
     [
         # Bad Cost
         (Cost("a", 0, 0, 0), Cost(1, 2, 3, 4), False),
@@ -98,10 +98,10 @@ def test_cost_validity(gold: int, food: int, wood: int, stone: int, expected_ret
         (Cost(-1, 0, 0, 100), Cost(0, 10, 10, 1000), False),
     ]
 )
-def test_cost_can_create(needed: Cost, available: Cost, expected_return: bool):
-    assert isinstance(needed, Cost)
+def test_cost_can_create(reqd: Cost, available: Cost, expected_return: bool):
+    assert isinstance(reqd, Cost)
     assert isinstance(available, Cost)
-    assert (needed.lte(available)) == expected_return
+    assert (reqd.lte(available)) == expected_return
 
 
 @pytest.mark.parametrize(
@@ -120,9 +120,9 @@ def test_cost_can_create(needed: Cost, available: Cost, expected_return: bool):
         ("1,2,3,4", None),
         ("[], {}, None, 'abcd'", None),
         ('{}', None),
-        ("{'Gold': 100}", None),  # Bad quotes, attribute should be in single quote
-        ('{"Gol": 299}', None),  # No attributes found
-        ('{"Gold": 0}', None),  # No attributes > 0
+        ("{'Gold': 100}", None),                    # Bad quotes, attribute should be in single quote
+        ('{"Gol": 299}', None),                     # No attributes found
+        ('{"Gold": 0}', None),                      # No attributes > 0
 
         # Valid parses
         ('{"Gold": 1}', Cost(gold=1)),
@@ -133,7 +133,7 @@ def test_cost_can_create(needed: Cost, available: Cost, expected_return: bool):
         ('{"Gold": True, "Stone": 10}', None),
         ('{"Gold": aaa, "Stone": 10}', None),
         ('{"Gold": {}, "Stone": 10}', None),
-        # Invalid json parse, extra ,
+        # Invalid json parse, extra ','
         ('{"Gold": 900,}', None),
         ('{"Gold": 9, "Stone": 10, "xyz": -1}', Cost(gold=9, stone=10)),
         ('{"Gold": 9, "Stone": 10, "Food": -1}', None),

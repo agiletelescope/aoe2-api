@@ -9,7 +9,7 @@ from tests.conftest import mock_units
 
 """
 Tests for structures blueprint,
-Located at aoe2_api/routes/structures/routes.py
+Located at aoe2_api/routes/units/routes.py
 """
 
 

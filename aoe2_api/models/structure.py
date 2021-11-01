@@ -17,6 +17,12 @@ class Structure(Aoe2Parsable):
     hit_points: int
 
     def is_valid(self) -> bool:
+        """
+        Check if the structure object is valid
+
+        :return: Boolean, True if valid, False otherwise
+        """
+
         if not super().is_valid():
             return False
 
@@ -37,6 +43,9 @@ class Structure(Aoe2Parsable):
 
     @staticmethod
     def from_str(data):
+        """
+        Parse a string to object a Structure
+        """
 
         if not isinstance(data, str):
             return

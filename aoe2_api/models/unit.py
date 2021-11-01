@@ -18,6 +18,12 @@ class Unit(Aoe2Parsable):
     created_in: str
 
     def is_valid(self) -> bool:
+        """
+        Check if the Unit object is valid
+
+        :return: Boolean, True if valid, False otherwise
+        """
+
         if not super().is_valid():
             return False
 
@@ -36,6 +42,9 @@ class Unit(Aoe2Parsable):
 
     @staticmethod
     def from_str(data):
+        """
+        Parse a string to object a Structure
+        """
 
         if not isinstance(data, str):
             return
