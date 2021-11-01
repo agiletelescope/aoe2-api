@@ -15,11 +15,11 @@ Units Routes
 """
 
 
-@bp_units.route('/')
+@bp_units.route('/', methods=['POST'])
 def get_units():
     """
     Retrieve a list of units filtered by available cost, if any
-    Request type: GET, body optional
+    Request type: POST, body optional
 
     Body (optional),
     - gold: Int, amount of available Gold

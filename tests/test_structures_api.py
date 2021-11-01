@@ -56,7 +56,7 @@ def test_get_structures(app, structures_data, gold, food, wood, stone,
                         response_data, http_code, return_code):
 
     body = dict(gold=gold, food=food, wood=wood, stone=stone)
-    request = app.get('/structures/', json=remove_none_keys(body))
+    request = app.post('/structures/', json=remove_none_keys(body))
 
     assert request is not None
     assert request.get_json() is not None

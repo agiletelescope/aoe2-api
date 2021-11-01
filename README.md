@@ -67,7 +67,7 @@ Simple aoe2 api written in python flask
     vim ./aoe2_api/shared/config.py
     ```
     
-#### Return Codes
+#### Status Codes
 
 ```
 SUCCESS = 0
@@ -84,4 +84,30 @@ INVALID_DATA_FORMAT = -2001
 ```
 # Internal Errors
 DATA_STORE_BAD = -3001
+```
+
+## API
+
+##### Body Params
+Name | Type | Description
+--- | --- | ---
+`gold` | Int | Available Gold, Optional
+`food` | Int | Available Food, Optional
+`wood` | Int | Available Wood, Optional
+`stone` | Int | Available Stone, Optional
+
+
+##### Endpoints
+Name | Route | Request Type | Description
+--- | --- | --- | ---- 
+Structures | `/structures` | `POST` | Retrieve all structures that match the body query
+Units | `/units`  | `POST` | Retrieve all units that match the body query
+
+
+##### Error response format
+```
+{
+  "code": <Status Code of the error>,
+  "message: <Description of the error>
+}
 ```
