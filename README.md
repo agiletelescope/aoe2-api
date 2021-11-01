@@ -28,13 +28,13 @@ Simple aoe2 api written in python flask
 │   └── app.py                     Flask app creation & initialization
 ├── tests                          Pytest Container
 │   ├── data                       Predefined data files, used for tests
-│   ├── tests_cost.py              pytest songs service
-│   ├── tests_csvparser.py         pytest users service
-│   ├── tests_datastore.py         pytest songs service
-│   ├── tests_structure.py         pytest songs service
-│   ├── tests_structures_api.py    pytest songs service
-│   ├── tests_unit.py              pytest songs service
-│   ├── tests_units_api.py         pytest songs service
+│   ├── tests_cost.py              Tests for cost model
+│   ├── tests_csvparser.py         Tests for csv parser
+│   ├── tests_datastore.py         Tests for Datastore
+│   ├── tests_structure.py         Tests for structure model
+│   ├── tests_structures_api.py    Tests for structures routes, routes/structures/routes.py
+│   ├── tests_unit.py              Tests for unit model
+│   ├── tests_units_api.py         Tests for unit routes, routes/units/routes.py
 │   └── conftest.py                pytest init and fixtures definition
 └── run.py                         Callable entry point to run the server
 ```
@@ -66,3 +66,5 @@ Simple aoe2 api written in python flask
     ```
     vim ./aoe2_api/shared/config.py
     ```
+    
+    
