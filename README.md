@@ -1,11 +1,13 @@
 
 ## aoe2-api
-Simple aoe2 api written in python flask
+Simple aoe2 api written in python [flask](https://flask.palletsprojects.com/en/2.0.x/).
 
 #### Context
-> Age of Empires II is a real-time strategy game that focuses on building towns, gathering resources, and creating armies to defeat opponents.  
+> Age of Empires II (or Aoe2) is a real-time strategy game that focuses on building towns, gathering resources, and creating armies to defeat opponents.  
 
-In simple words, it's a game where in you gather resources (`gold, food, wood and stone`) distributed throughout the world, you can build a certain `structure` once you've gathered enough resources necessary to build it. Certain special structures (like Barracks) are capable of training/producing military `units` capable of attacking the enemy. More info about the game [here](https://en.wikipedia.org/wiki/Age_of_Empires_II).
+In simple words, it's a game where in you gather resources (`gold, food, wood and stone`) distributed throughout the world, you can build a certain `structure` once you've gathered enough resources necessary to build it. Certain special structures (like Barracks) are capable of training/producing military `units` capable of attacking the enemy.
+
+As you make progress in the game, you evolve your civilization through the `Ages` starting from `Dark` age, followed by `Feudal`, `Castle` and `Imprial` ages. More info about the game [here](https://en.wikipedia.org/wiki/Age_of_Empires_II).
 
 
 #### Project Structure
